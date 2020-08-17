@@ -1,0 +1,19 @@
+version: 2.0
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test-build-in-docker
+jobs:
+  test-build-in-docker:
+    description: Check that build-in-docker works
+    docker:
+      - image: circleci/golang:latest
+    environment:
+    working_directory: /go/src/github.com/zrepl/zrepl
+    steps:
+    - checkout
+    - setup_remote_docker
+    - run:
+        name: build the build image (build deps)
+        command: docker build -t zrepl_build -f copyfilerange.Dockerfile .
