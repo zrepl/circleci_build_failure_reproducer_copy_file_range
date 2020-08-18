@@ -9,7 +9,7 @@ jobs:
   language=c:
     description: build test case written in C
     docker:
-      - image: debian:latest
+      - image: cimg/base:2020.08
     working_directory: /src
     steps:
     - checkout
@@ -20,7 +20,7 @@ jobs:
   language=go:
     description: build test case written in Go
     docker:
-      - image: debian:latest
+      - image: cimg/base:2020.08
     working_directory: /src
     steps:
     - checkout
