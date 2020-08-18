@@ -10,7 +10,6 @@ jobs:
     description: build test case written in C
     docker:
       - image: cimg/base:2020.08
-    working_directory: /src
     steps:
     - checkout
     - setup_remote_docker
@@ -21,7 +20,6 @@ jobs:
     description: build test case written in Go
     docker:
       - image: cimg/base:2020.08
-    working_directory: /src
     steps:
     - checkout
     - setup_remote_docker
