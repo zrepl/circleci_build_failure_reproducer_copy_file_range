@@ -1,9 +1,7 @@
-FROM golang:latest
+FROM gcc:latest
 
-ADD copyfilerange.go /src/copyfilerange.go
+ADD copyfilerange.c /src/copyfilerange.c
 
-
-RUN echo "foo" > /src.txt && go run /src/copyfilerange.go /src.txt /dst.txt
-RUN echo "foo" > /src.txt && go run /src/copyfilerange.go /src.txt /tmp/dst.txt
-
+RUN gcc -o /copyfilerange_demo /src/copyfilerange.c
+RUN echo "foo" > /src.txt && /copyfilerange_demo /src.txt /dst.txt
 
