@@ -11,6 +11,6 @@ The reason for these failures is that Go 1.15 starts to use copy_file_range auto
 
 I put together a reproducer repository with CircleCI enabled: https://github.com/zrepl/circleci_build_failure_reproducer_copy_file_range
 
-The command in .circleci/config.yml works fine on my local machine but fails in CircleCI.
+The build jobs in .circleci/config work fine on my local machine but fail on CircleCI.
 
-Failing build in that repository is: https://app.circleci.com/pipelines/github/zrepl/circleci_build_failure_reproducer_copy_file_range/1/workflows/e37d0fa4-0afe-4a23-8d15-662776520c87/jobs/1
+See failing builds at: https://app.circleci.com/pipelines/github/zrepl/circleci_build_failure_reproducer_copy_file_range/
